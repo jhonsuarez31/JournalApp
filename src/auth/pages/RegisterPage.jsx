@@ -4,7 +4,7 @@ import React, { useMemo, useState } from "react";
 import { AuthLayout } from "../layout/AuthLayout";
 import { useForm } from "../../hooks/useForm";
 import { useDispatch, useSelector } from "react-redux";
-import { startCreatingUserWithEmailPassword } from "../../store/thunks";
+import { startCreatingUserWithEmailPassword } from "../../store/auth/thunks";
 
 const formValidations = {
   email: [(value) => value.includes("@"), "El email debe tener un arroba"],

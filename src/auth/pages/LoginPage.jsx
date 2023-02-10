@@ -7,7 +7,7 @@ import { Google, Password } from "@mui/icons-material";
 import { Alert, Button, Grid, Link, TextField, Typography } from "@mui/material";
 import { AuthLayout } from "../layout/AuthLayout";
 import { useForm } from "../../hooks/useForm";
-import { checkingAuthentication, startGoogleSingIn,startLoginWithEmailPassword } from "../../store/thunks";
+import { checkingAuthentication, startGoogleSingIn,startLoginWithEmailPassword } from "../../store/auth/thunks";
 
 export const LoginPage = () => {
   
