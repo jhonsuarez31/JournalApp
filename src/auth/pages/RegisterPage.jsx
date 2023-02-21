@@ -6,6 +6,11 @@ import { useForm } from "../../hooks/useForm";
 import { useDispatch, useSelector } from "react-redux";
 import { startCreatingUserWithEmailPassword } from "../../store/auth/thunks";
 
+const formData = {
+  email: '',
+  password: '',
+  displayName: ''
+}
 const formValidations = {
   email: [(value) => value.includes("@"), "El email debe tener un arroba"],
   password: [
@@ -35,14 +40,8 @@ export const RegisterPage = () => {
     displayNameValied,
     emailValied,
     passwordValied,
-  } = useForm(
-    {
-      displayName: "",
-      email: "",
-      password: "",
-    },
-    formValidations
-  );
+  } = useForm( formData, formValidations );
+
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -62,6 +61,7 @@ export const RegisterPage = () => {
               placeholder="Tu nombre"
               fullWidth
               name="displayName"
+              autoComplete="off"
               value={displayName}
               onChange={onInputChange}
               error={!!displayNameValied && formSubmitted}
@@ -75,6 +75,7 @@ export const RegisterPage = () => {
               placeholder="correo@goggle.com"
               fullWidth
               name="email"
+              autoComplete="off"
               value={email}
               onChange={onInputChange}
               error={!!emailValied && formSubmitted}

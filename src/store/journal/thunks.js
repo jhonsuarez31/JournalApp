@@ -1,5 +1,4 @@
-import { async } from "@firebase/util";
-import { FileUpload } from "@mui/icons-material";
+
 import { collection, deleteDoc, doc, setDoc } from "firebase/firestore/lite";
 import { FirebaseDB } from "../../firebase/config";
 import { fuleUpload } from "../../helpers/fuleUpload";
